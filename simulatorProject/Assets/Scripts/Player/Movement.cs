@@ -33,8 +33,8 @@ public class Movement : MonoBehaviour
 
 
             Vector3 vector3 = transform.position;
-            vector3.x += vertical * speed * Time.deltaTime;
-            vector3.z += horizontal * speed * Time.deltaTime;
+            vector3.x += horizontal * speed * Time.deltaTime;
+            vector3.z += vertical * speed * Time.deltaTime;
             vector3.y += jump * speed * Time.deltaTime;
 
             transform.position = vector3;
