@@ -5,6 +5,7 @@ using UnityEngine;
 public class Work : MonoBehaviour
 {
     public PlayerFeatures energy;
+    public PlayerFeatures life;
     MeshRenderer meshRenderer;
 
     // Start is called before the first frame update
@@ -32,6 +33,16 @@ public class Work : MonoBehaviour
             energy.energyLevel -= 0.05f;
             StartCoroutine(Waiting());
         }
+        if(energy.energyLevel < 0) { energy.energyLevel = 0; }
+
+        if(energy.energyLevel <= 50)
+        {
+            if (life.playerLife > 0)
+            {
+                life.playerLife -= 0.05f;
+            }
+        }
+        if(life.playerLife < 0) { life.playerLife = 0; }
 
     }
     IEnumerator Waiting()
